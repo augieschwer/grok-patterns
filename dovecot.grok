@@ -1,0 +1,26 @@
+LOGIN [.a-zA-Z0-9_-]+
+
+DOVECOT_LOGIN %{SYSLOGBASE} %{WORD:proto}-login: %{DATA:status_message}: user=<(%{LOGIN:user})?>, session=%{DATA:session}, (method=%{DATA:method}, )?rip=%{IP:rip}, lip=%{IP:lip}, (mpid=%{DATA:mpid}, )?%{GREEDYDATA:method2}
+
+DOVECOT_LOGOUT_1 %{SYSLOGBASE} %{WORD:proto}\(%{LOGIN:user}\): session=%{DATA:session} %{DATA:status_message} in=%{NONNEGINT:in} out=%{NONNEGINT:out}
+DOVECOT_LOGOUT_2 %{SYSLOGBASE} %{WORD:proto}\(%{LOGIN:user}\): session=%{DATA:session} %{DATA:status_message} top=%{NONNEGINT:top_1}/%{NONNEGINT:top_2}, retr=%{NONNEGINT:retr_1}/%{NONNEGINT:retr_2}, del=%{NONNEGINT:del_1}/%{NONNEGINT:del_2}, size=%{NONNEGINT:size}
+DOVECOT_LOGOUT (%{DOVECOT_LOGOUT_1}|%{DOVECOT_LOGOUT_2})
+
+DOVECOT_OTHER %{SYSLOGBASE} %{WORD:proto}\(%{LOGIN:user}\): session=%{DATA:session} (%{DATA:action}: )+(box=%{DATA:box}, )?(uid=%{NONNEGINT:uid}, )?(msgid=(<)?(%{DATA:msgid})?(>)?, )?(size=%{NONNEGINT:size}, )?(from=%{DATA:from}, )?(flags=\(%{DATA:flags}\))?
+
+DOVECOT_AUTH_1 %{SYSLOGBASE} auth-worker\(%{POSINT}\): %{WORD:auth_method}\(%{LOGIN:user},%{IP:rip}\): %{GREEDYDATA:status_message}
+DOVECOT_AUTH_2 %{SYSLOGBASE} auth: %{WORD:auth_method}\(%{LOGIN:master_user},%{IP:rip},master,<%{DATA:session}>\): Master user logging in as %{LOGIN:user}
+DOVECOT_AUTH_3 %{SYSLOGBASE} auth: %{WORD:auth_method}\(\?,%{IP:rip},<%{DATA:session}>\): %{GREEDYDATA:status_message}
+DOVECOT_AUTH (%{DOVECOT_AUTH_1}|%{DOVECOT_AUTH_2}|%{DOVECOT_AUTH_3})
+
+DOVECOT_POSTLOGIN_1 %{SYSLOGBASE} graymail spool missing for %{LOGIN:user}
+DOVECOT_POSTLOGIN_2 %{SYSLOGBASE} graymail symlink missing for %{LOGIN:user} to %{UNIXPATH:user_spool}
+DOVECOT_POSTLOGIN_3 %{SYSLOGBASE} graymail symlink for %{LOGIN:user} added
+DOVECOT_POSTLOGIN_4 %{SYSLOGBASE} graymail directory exist %{UNIXPATH:user_spool}
+DOVECOT_POSTLOGIN (%{DOVECOT_POSTLOGIN_1}|%{DOVECOT_POSTLOGIN_2}|%{DOVECOT_POSTLOGIN_3}|%{DOVECOT_POSTLOGIN_4})
+
+DOVECOT_STATS %{SYSLOGBASE} stats: %{WORD:stat_level}: %{GREEDYDATA:stat_message}
+
+DOVECOT_SSL %{SYSLOGBASE} ssl-params: %{GREEDYDATA:ssl_message}
+
+DOVECOT (%{DOVECOT_LOGIN}|%{DOVECOT_LOGOUT}|%{DOVECOT_OTHER}|%{DOVECOT_AUTH}|%{DOVECOT_POSTLOGIN}|%{DOVECOT_STATS}|%{DOVECOT_SSL})

@@ -1,0 +1,26 @@
+EMAIL [.a-zA-Z0-9_-]+@%{IPORHOST}
+DSN [0-9][.][0-9][.][0-9]
+QID [A-za-z0-9]{14}
+
+# Match a relay that gives us a QID in the return status.
+SENDMAIL_TO_1 %{SYSLOGBASE} %{QID:qid}: to=<%{EMAIL:to}>, (%{WORD}=%{DATA},)+ relay=%{IPORHOST:relay} \[%{IP}\], dsn=%{DSN:dsn}, stat=%{DATA:status} \(%{QID:qid} %{GREEDYDATA:status_message}\)
+
+# Match a relay that does NOT give us a QID in the return status.
+SENDMAIL_TO_2 %{SYSLOGBASE} %{QID:qid}: to=<%{EMAIL:to}>, (%{WORD}=%{DATA},)+ relay=%{IPORHOST:relay} \[%{IP}\], dsn=%{DSN:dsn}, stat=%{DATA:status} \(%{GREEDYDATA:status_message}\)
+
+# Match a message with no relay IP address or status message.
+SENDMAIL_TO_3 %{SYSLOGBASE} %{QID:qid}: to=<%{EMAIL:to}>, (%{WORD}=%{DATA},)+ relay=%{IPORHOST:relay}, dsn=%{DSN:dsn}, stat=%{GREEDYDATA:status}
+
+# Match a message with no relay info at all.
+SENDMAIL_TO_4 %{SYSLOGBASE} %{QID:qid}: to=<%{EMAIL:to}>, (%{WORD}=%{DATA},)+ stat=%{GREEDYDATA:status}
+
+### TODO - match multiple recipients in To: field.
+#SENDMAIL_TO_5 %{SYSLOGBASE} %{QID:qid}: to=(<%{EMAIL:to}>,)+ (%{WORD}=%{DATA},)+ %{GREEDYDATA:status}
+
+SENDMAIL_TO (%{SENDMAIL_TO_1}|%{SENDMAIL_TO_2}|%{SENDMAIL_TO_3}|%{SENDMAIL_TO_4})
+
+SENDMAIL_FROM %{SYSLOGBASE} %{QID:qid}: from=<%{EMAIL:from}>, (%{WORD}=%{DATA},)+ relay=%{IPORHOST:relay} \[%{IP}\]
+
+SENDMAIL_OTHER %{SYSLOGBASE} %{QID:qid}: %{GREEDYDATA:message}
+
+SENDMAIL (%{SENDMAIL_TO}|%{SENDMAIL_FROM}|%{SENDMAIL_OTHER})
