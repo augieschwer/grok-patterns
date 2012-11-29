@@ -1,0 +1,1 @@
+GRAYMAIL %{SYSLOGBASE} %{LOGIN:user} sent <%{DATA:msgid}> %{DATA:from} to graymail
