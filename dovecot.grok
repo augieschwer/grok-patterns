@@ -1,5 +1,3 @@
-LOGIN [.a-zA-Z0-9_-]+
-
 DOVECOT_LOGIN %{SYSLOGBASE} %{WORD:proto}-login: %{DATA:status_message}: user=<(%{LOGIN:user})?>, session=%{DATA:session}, (method=%{DATA:method}, )?rip=%{IP:rip}, lip=%{IP:lip}, (mpid=%{DATA:mpid}, )?%{GREEDYDATA:method2}
 
 DOVECOT_LOGOUT_1 %{SYSLOGBASE} %{WORD:proto}\(%{LOGIN:user}\): session=%{DATA:session} %{DATA:status_message} in=%{NONNEGINT:in} out=%{NONNEGINT:out}

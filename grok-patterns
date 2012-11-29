@@ -1,3 +1,4 @@
+LOGIN [.a-zA-Z0-9_-]+
 # Load some default patterns that ship with grok.
 # See also: 
 # http://code.google.com/p/semicomplete/source/browse/grok/patterns/base
