@@ -24,7 +24,7 @@ messages.push("Nov 12 14:40:08 b.mail.sonic.net sm-mta[17605]: qACMe8E2017601: t
 messages.push("Nov 12 16:12:42 b.mail.sonic.net sm-mta[13756]: qAD0Cg5c013756: to=<augie@corp.sonic.net>, delay=00:00:00, pri=30747, stat=Mail Rejected: high volume mailings not allowed. Contact support@sonic.net for more information.")
 #
 # TODO - input for SENDMAIL_TO with multiple addresses in the "To" field.
-#messages.push("Nov 13 14:52:10 a.mail.sonic.net sm-mta[16961]: qADMh0cd016570: to=<augie@corp.sonic.net>,<augie@sonic.net>,<augie@schwer.us>, delay=00:09:09, xdelay=00:00:09, mailer=esmtp, pri=4437228, relay=ign-com.mail.eo.outlook.com. [216.32.180.22], dsn=2.0.0, stat=Sent (<00b601cdc1f0$4d506a80$e7f13f80$@com> [InternalId=14475985] Queued mail for delivery)")
+messages.push("Nov 13 14:52:10 a.mail.sonic.net sm-mta[16961]: qADMh0cd016570: to=<augie@corp.sonic.net>,<augie@sonic.net>,<augie@schwer.us>, delay=00:09:09, xdelay=00:00:09, mailer=esmtp, pri=4437228, relay=ign-com.mail.eo.outlook.com. [216.32.180.22], dsn=2.0.0, stat=Sent (<00b601cdc1f0$4d506a80$e7f13f80$@com> [InternalId=14475985] Queued mail for delivery)")
 #
 ### SENDMAIL_FROM ###
 #
@@ -40,15 +40,10 @@ grok.compile(pattern)
 grok.compile(pattern)
 
 messages.each do |message|
-	#puts "Input: #{message}"
 	match = grok.match(message)
-	if match
-		#puts "Resulting capture:"
-		#pp match.captures
-		puts "MATCH"
-	else
-		puts "Pattern did not match"
+	unless match
+		puts 'FAIL: the following message did not match any pattern'
+		puts message
 	end
-
 end
 
