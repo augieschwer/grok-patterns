@@ -46,4 +46,4 @@ messages.each do |message|
 		puts message
 	end
 end
-
+puts 'All tests complete'
