@@ -1,0 +1,1 @@
+VACATION %{SYSLOGBASE} %{QID:qid};: %{GREEDYDATA:status}
