@@ -42,7 +42,7 @@ messages.push("Nov 15 14:07:42 d.imapd.sonic.net dovecot-postlogin[26352]: graym
 messages.push("Nov 15 14:10:59 d.imapd.sonic.net dovecot-postlogin[2207]: graymail symlink missing for augie to /var/spool/graymail/augie")
 messages.push("Nov 15 15:47:59 c.imapd.sonic.net dovecot-postlogin[2643]: graymail symlink for augie added")
 messages.push("Nov 15 15:47:59 c.imapd.sonic.net dovecot-postlogin[2643]: graymail directory exist /var/spool/graymail/augie")
-messages.push("Nov 28 02:45:28 b.imapd.sonic.net dovecot-postlogin[7524]: graymail symlink creation failure forr augie :: File exists")
+messages.push("Nov 28 02:45:28 b.imapd.sonic.net dovecot-postlogin[7524]: graymail symlink creation failure for augie :: File exists")
 #
 # STATS
 messages.push("Nov 15 14:18:36 d.imapd.sonic.net dovecot: stats: Error: Mail server input error: UPDATE-SESSION: stats shrank: mlpath 2 < 3")

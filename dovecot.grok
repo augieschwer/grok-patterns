@@ -15,7 +15,7 @@ DOVECOT_POSTLOGIN_1 %{SYSLOGBASE} graymail spool missing for %{LOGIN:user}
 DOVECOT_POSTLOGIN_2 %{SYSLOGBASE} graymail symlink missing for %{LOGIN:user} to %{UNIXPATH:user_spool}
 DOVECOT_POSTLOGIN_3 %{SYSLOGBASE} graymail symlink for %{LOGIN:user} added
 DOVECOT_POSTLOGIN_4 %{SYSLOGBASE} graymail directory exist %{UNIXPATH:user_spool}
-DOVECOT_POSTLOGIN_5 %{SYSLOGBASE} graymail symlink creation failure forr %{LOGIN:user} :: %{GREEDYDATA:stat_message}
+DOVECOT_POSTLOGIN_5 %{SYSLOGBASE} graymail symlink creation failure for %{LOGIN:user} :: %{GREEDYDATA:stat_message}
 DOVECOT_POSTLOGIN (%{DOVECOT_POSTLOGIN_1}|%{DOVECOT_POSTLOGIN_2}|%{DOVECOT_POSTLOGIN_3}|%{DOVECOT_POSTLOGIN_4}|%{DOVECOT_POSTLOGIN_5})
 
 DOVECOT_STATS %{SYSLOGBASE} stats: %{WORD:stat_level}: %{GREEDYDATA:stat_message}
