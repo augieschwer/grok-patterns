@@ -15,8 +15,9 @@ grok.add_patterns_from_file("default.grok")
 grok.add_patterns_from_file("graymail.grok")
 
 messages.push("Nov 29 15:14:20 a.spam.sonic.net graymail: augie sent <0.0.1079908368.spx405e1810hss392.0@whenimawalkin.com> \"Truck\" <contact@whenimawalkin.com> to graymail")
-messages.push("Nov 30 11:32:48 a.spam.sonic.net graymail: augie sent <0.1.A6.CE8.1CDCF3176314704.0@vmta-c-103.listrak.com> \"The Home Decorating Company\" <enews@home-decorating-co.com> to /dev/null for SpamAssassin Blacklists")
-messages.push("Nov 30 11:42:23 a.spam.sonic.net graymail: zeebie sent <U[20 gtrjoea@docomo.ne.jp to graymail")
+messages.push("Nov 30 11:32:48 a.spam.sonic.net graymail: augie sent <0.1.A6.CE8.1CDCF3176314704.0@vmta-c-103.listrak.com> \"The Home Decorating Company\" <augie@schwer.us> to /dev/null for SpamAssassin Blacklists")
+messages.push("Nov 30 11:42:23 a.spam.sonic.net graymail: augie sent <U[20 gtrjoea@docomo.ne.jp to graymail")
+messages.push("Nov 30 11:45:12 a.spam.sonic.net graymail: augie sent 700419806.11110861281@souzafamily.com \"Augie Schwer\" <augie@schwer.us> to graymail")
 
 pattern = "%{GRAYMAIL}"
 grok.compile(pattern)
