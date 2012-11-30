@@ -16,6 +16,7 @@ grok.add_patterns_from_file("common.grok")
 grok.add_patterns_from_file("vacation.grok")
 
 messages.push("Nov 30 11:51:01 a.spam.sonic.net vacation-wrap[14341]: qAUJoxHi014339;: exiting with 0: vacation completed")
+messages.push("Nov 30 14:43:42 c.spam.sonic.net vacation-wrap[14659]: unknown: exiting with 75: Timed out reading STDIN")
 
 pattern = "%{VACATION}"
 grok.compile(pattern)
