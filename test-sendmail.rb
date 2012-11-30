@@ -34,6 +34,7 @@ messages.push("Nov 12 13:01:25 b.mail.sonic.net sm-mta[24787]: qACL1Pfa024787: f
 #
 ### SENDMAIL_OTHER ###
 messages.push("Nov  7 13:52:47 b.mx.sonic.net sm-mta[29841]: qA7LqlqC029841: Milter add: header: X-Sonic-SB-IP-RBLs: IP RBLs sorbs-spam.")
+messages.push("Nov 30 10:35:10 a.spam.sonic.net sendmail[20393]: STARTTLS=client, relay=gmail-smtp-in.l.google.com., version=TLSv1/SSLv3, verify=OK, cipher=RC4-SHA, bits=128/128")
 
 pattern = "%{SENDMAIL}"
 grok.compile(pattern)
