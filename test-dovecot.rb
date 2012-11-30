@@ -11,7 +11,7 @@ messages = Array.new
 # Load some default patterns that ship with grok.
 # See also: 
 #   http://code.google.com/p/semicomplete/source/browse/grok/patterns/base
-grok.add_patterns_from_file("grok-patterns")
+grok.add_patterns_from_file("default.grok")
 grok.add_patterns_from_file("dovecot.grok")
 
 # LOGIN
