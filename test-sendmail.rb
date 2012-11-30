@@ -12,6 +12,7 @@ messages = Array.new
 # See also: 
 #   http://code.google.com/p/semicomplete/source/browse/grok/patterns/base
 grok.add_patterns_from_file("default.grok")
+grok.add_patterns_from_file("common.grok")
 grok.add_patterns_from_file("sendmail.grok")
 
 ### SENDMAIL_TO ###

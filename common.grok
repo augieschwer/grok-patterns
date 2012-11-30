@@ -1,0 +1,2 @@
+LOGIN [.a-zA-Z0-9_-]+
+QID [A-za-z0-9]{14}
