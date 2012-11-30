@@ -1,1 +1,3 @@
-GRAYMAIL %{SYSLOGBASE} %{LOGIN:user} sent <%{DATA:msgid}> %{DATA:from} to graymail
+GRAYMAIL_TO %{SYSLOGBASE} %{LOGIN:user} sent <%{DATA:msgid}> %{DATA:from} to graymail
+GRAYMAIL_BL %{SYSLOGBASE} %{LOGIN:user} sent <%{DATA:msgid}> %{DATA:from} to /dev/null for SpamAssassin Blacklists
+GRAYMAIL (%{GRAYMAIL_TO}|%{GRAYMAIL_BL})
