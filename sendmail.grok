@@ -1,6 +1,5 @@
 EMAIL %{LOGIN}@%{IPORHOST}
 DSN [0-9][.][0-9][.][0-9]
-QID [A-za-z0-9]{14}
 
 # Match a relay that gives us a QID in the return status.
 SENDMAIL_TO_1 %{SYSLOGBASE} %{QID:qid}: to=<%{EMAIL:to}>, (%{WORD}=%{DATA},)+ relay=%{IPORHOST:relay} \[%{IP}\], dsn=%{DSN:dsn}, stat=%{DATA:status} \(%{QID:qid} %{GREEDYDATA:status_message}\)
