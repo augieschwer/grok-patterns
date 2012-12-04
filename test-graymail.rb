@@ -20,6 +20,7 @@ messages.push("Nov 30 11:32:48 a.spam.sonic.net graymail: augie sent <0.1.A6.CE8
 messages.push("Nov 30 11:42:23 a.spam.sonic.net graymail: augie sent <U[20 gtrjoea@docomo.ne.jp to graymail")
 messages.push("Nov 30 11:45:12 a.spam.sonic.net graymail: augie sent 700419806.11110861281@souzafamily.com \"Augie Schwer\" <augie@schwer.us> to graymail")
 messages.push("Dec  4 09:00:49 d.spam.sonic.net graymail: augie sent <IEAOeIiGX00000037@champserver2k3.championgroups.net> to graymail")
+messages.push("Dec  4 13:00:19 c.spam.sonic.net graymail: aae sent 20121204160010@irsAuctions.com Auctioneer@irsAuctions.com to /dev/null for SpamAssassin Blacklists")
 
 pattern = "%{GRAYMAIL}"
 grok.compile(pattern)
