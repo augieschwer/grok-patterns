@@ -50,8 +50,9 @@ messages.push("Dec  6 14:06:30 b.mail.sonic.net sm-mta[3306]: STARTTLS=server, r
 
 ### SENDMAIL_AUTH ###
 messages.push("Dec  6 11:43:12 b.mail.sonic.net sm-mta[29813]: AUTH=server, relay=127.0.0.1.dsl.dynamic.sonic.net [127.0.0.1], authid=augie, mech=PLAIN, bits=0")
-messages.push("Dec  6 12:02:33 a.mail.sonic.net sm-mta[19515]: AUTH=server, relay=[67.59.198.131], authid=mcvu131, mech=PLAIN, bits=0")
-messages.push("Dec  6 14:06:32 a.mail.sonic.net sm-mta[9738]: AUTH=server, relay=173-228-127-4.dsl.dynamic.sonic.net [173.228.127.4] (may be forged), authid=rosebear, mech=PLAIN, bits=0")
+messages.push("Dec  6 12:02:33 a.mail.sonic.net sm-mta[19515]: AUTH=server, relay=[67.59.198.131], authid=augie, mech=PLAIN, bits=0")
+messages.push("Dec  6 14:06:32 a.mail.sonic.net sm-mta[9738]: AUTH=server, relay=173-228-127-4.dsl.dynamic.sonic.net [173.228.127.4] (may be forged), authid=augie, mech=PLAIN, bits=0")
+messages.push("Dec  6 14:06:28 a.mail.sonic.net sm-mta[9661]: AUTH=server, relay=c-50-131-108-189.hsd1.ca.comcast.net [50.131.108.189], authid=augie@sonic.net, mech=LOGIN, bits=0")
 
 pattern = "%{SENDMAIL}"
 grok.compile(pattern)
