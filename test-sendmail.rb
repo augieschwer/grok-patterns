@@ -46,6 +46,8 @@ messages.push("Dec  4 10:24:32 c.spam.sonic.net sendmail[32283]: STARTTLS=client
 
 messages.push("Dec  6 11:56:09 b.mail.sonic.net sm-mta[10180]: STARTTLS=server, relay=173-8-135-25-SFBA.hfc.comcastbusiness.net [173.8.135.25], version=TLSv1/SSLv3, verify=NO, cipher=AES128-SHA, bits=128/128")
 
+messages.push("Dec  6 14:06:30 b.mail.sonic.net sm-mta[3306]: STARTTLS=server, relay=[184.21.104.253], version=TLSv1/SSLv3, verify=NO, cipher=RC4-MD5, bits=128/128")
+
 ### SENDMAIL_AUTH ###
 messages.push("Dec  6 11:43:12 b.mail.sonic.net sm-mta[29813]: AUTH=server, relay=127.0.0.1.dsl.dynamic.sonic.net [127.0.0.1], authid=augie, mech=PLAIN, bits=0")
 messages.push("Dec  6 12:02:33 a.mail.sonic.net sm-mta[19515]: AUTH=server, relay=[67.59.198.131], authid=mcvu131, mech=PLAIN, bits=0")
