@@ -44,6 +44,8 @@ messages.push("Dec  4 10:24:32 c.spam.sonic.net sendmail[32283]: ruleset=tls_ser
 
 messages.push("Dec  4 10:24:32 c.spam.sonic.net sendmail[32283]: STARTTLS=client, error: connect failed=0, SSL_error=5")
 
+messages.push("Dec  6 11:56:09 b.mail.sonic.net sm-mta[10180]: STARTTLS=server, relay=173-8-135-25-SFBA.hfc.comcastbusiness.net [173.8.135.25], version=TLSv1/SSLv3, verify=NO, cipher=AES128-SHA, bits=128/128")
+
 ### SENDMAIL_AUTH ###
 messages.push("Dec  6 11:43:12 b.mail.sonic.net sm-mta[29813]: AUTH=server, relay=127.0.0.1.dsl.dynamic.sonic.net [127.0.0.1], authid=augie, mech=PLAIN, bits=0")
 
