@@ -48,6 +48,9 @@ messages.push("Dec  6 11:56:09 b.mail.sonic.net sm-mta[10180]: STARTTLS=server, 
 
 messages.push("Dec  6 14:06:30 b.mail.sonic.net sm-mta[3306]: STARTTLS=server, relay=[184.21.104.253], version=TLSv1/SSLv3, verify=NO, cipher=RC4-MD5, bits=128/128")
 
+### SENDMAIL_RELAY ###
+messages.push("Dec  6 14:24:52 a.mail.sonic.net sm-mta[28606]: ruleset=check_relay, arg1=c-76-102-185-118.hsd1.ca.comcast.net, arg2=76.102.185.118, relay=c-76-102-185-118.hsd1.ca.comcast.net [76.102.185.118], reject=421 4.3.2 Connection rate limit exceeded.")
+
 ### SENDMAIL_AUTH ###
 messages.push("Dec  6 11:43:12 b.mail.sonic.net sm-mta[29813]: AUTH=server, relay=127.0.0.1.dsl.dynamic.sonic.net [127.0.0.1], authid=augie, mech=PLAIN, bits=0")
 messages.push("Dec  6 12:02:33 a.mail.sonic.net sm-mta[19515]: AUTH=server, relay=[67.59.198.131], authid=augie, mech=PLAIN, bits=0")
