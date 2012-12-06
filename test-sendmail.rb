@@ -44,6 +44,9 @@ messages.push("Dec  4 10:24:32 c.spam.sonic.net sendmail[32283]: ruleset=tls_ser
 
 messages.push("Dec  4 10:24:32 c.spam.sonic.net sendmail[32283]: STARTTLS=client, error: connect failed=0, SSL_error=5")
 
+### SENDMAIL_AUTH ###
+messages.push("Dec  6 11:43:12 b.mail.sonic.net sm-mta[29813]: AUTH=server, relay=127.0.0.1.dsl.dynamic.sonic.net [127.0.0.1], authid=augie, mech=PLAIN, bits=0")
+
 pattern = "%{SENDMAIL}"
 grok.compile(pattern)
 grok.compile(pattern)
