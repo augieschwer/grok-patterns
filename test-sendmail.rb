@@ -57,6 +57,7 @@ messages.push("Dec  6 11:43:12 b.mail.sonic.net sm-mta[29813]: AUTH=server, rela
 messages.push("Dec  6 12:02:33 a.mail.sonic.net sm-mta[19515]: AUTH=server, relay=[67.59.198.131], authid=augie, mech=PLAIN, bits=0")
 messages.push("Dec  6 14:06:32 a.mail.sonic.net sm-mta[9738]: AUTH=server, relay=173-228-127-4.dsl.dynamic.sonic.net [173.228.127.4] (may be forged), authid=augie, mech=PLAIN, bits=0")
 messages.push("Dec  6 14:06:28 a.mail.sonic.net sm-mta[9661]: AUTH=server, relay=c-50-131-108-189.hsd1.ca.comcast.net [50.131.108.189], authid=augie@sonic.net, mech=LOGIN, bits=0")
+messages.push("Dec  6 14:37:07 b.mail.sonic.net sm-mta[2208]: AUTH=server, relay=[12.133.142.194], authid=augie@sonic.net, mech=LOGIN, bits=0")
 
 pattern = "%{SENDMAIL}"
 grok.compile(pattern)
