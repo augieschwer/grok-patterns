@@ -1,0 +1,3 @@
+BINDRPZ_QNAME %{MONTHDAY}-%{MONTH}-%{YEAR} %{TIME}.(%{INT})+ rpz: info: client %{IP:client_ip}#%{POSINT}: disabled rpz QNAME NXDOMAIN rewrite %{HOST:qdomain} via %{HOST:rpz_host}
+BINDRPZ_IP %{MONTHDAY}-%{MONTH}-%{YEAR} %{TIME}.(%{INT})+ rpz: info: disabled rpz IP NXDOMAIN rewrite @ via %{HOST:rpz_host}
+BINDRPZ (%{BINDRPZ_QNAME}|%{BINDRPZ_IP})
